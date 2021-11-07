@@ -1,1 +1,1 @@
-# Libft2
+# Libft
