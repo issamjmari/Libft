@@ -37,7 +37,7 @@ int	ft_atoi(const char *str)
 	i = 0;
 	negative = 0;
 	temp = 0;
-	if (temp > -2147483648 || temp > 2147483647)
+	if (temp < -2147483648 || temp > 2147483647)
 		temp = handle_maxmin(temp);
 	while (is_space(str[i]))
 		i++;
