@@ -15,6 +15,8 @@
 
 int main(void)
 {
-	char * str = strdup("1");
-	ft_substr(str, 42, 42000000);
+	// char * str = strdup("1");
+	printf("%d\n", atoi("-99999999999999999999999999"));
+	printf("%d\n", ft_atoi("-99999999999999999999999999"));
+	// printf("%s\n", ft_memcpy("", "", 3));
 }

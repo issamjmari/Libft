@@ -36,31 +36,32 @@ char *ft_stock(char *s1, int stock, int last, char *temp)
 	return (temp);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char    *ft_strtrim(char const *s1, char const *set)
 {
-	char	*temp;
-	int		i;
-	int		len;
-	int		stock;
-	int		last;
+    char    *temp;
+    int        i;
+    int        len;
+    int        stock;
+    int        last;
 
-	if (!set[0])
-		return ((char *)s1);
-	i = 0;
-	len = ft_strlen(s1);
-	last = len;
-	while (is_set(s1[i], set))
-		i++;
-	stock = i;
-	while (is_set(s1[--len], set))
-		i++;
-	if (len == i)
-		return (0);
-	last = last - i;
-	temp = (char *) malloc (last + 1);
-	if (!temp)
-		return (0);
-	temp = ft_stock((char *)s1, stock, last, temp);
-	temp[last] = '\0';
-	return (temp);
+    if (!set[0])
+        return ((char *)s1);
+    i = 0;
+    len = ft_strlen(s1);
+    last = len;
+    while (is_set(s1[i], set))
+        i++;
+    stock = i;
+    if (i != len)
+      while (is_set(s1[--len], set))
+        i++;
+    last = last - i;
+    if (i == len)
+        last = 0;
+    temp = (char *) malloc (last + 1);
+    if (!temp)
+        return (0);
+    temp = ft_stock((char *)s1, stock, last, temp);
+    temp[last] = '\0';
+    return (temp);
 }

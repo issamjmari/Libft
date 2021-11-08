@@ -26,7 +26,6 @@ static char	*are_overlapping(char *d1, char *s1, int len2)
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char	*d1;
-	char	*d2;
 	char	*s1;
 	int		len2;
 	int		lap;
@@ -35,6 +34,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	s1 = (char *) src;
 	len2 = (int) len;
 	lap = 0;
+	if (!d1 && !s1)
+		return (0);
 	if (d1 > s1)
 	{
 		d1 = are_overlapping(d1, s1, len2);
@@ -42,8 +43,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	if (lap != 1)
 	{
-		d2 = ft_memcpy(d1, s1, len);
-		return (d2);
+		d1 = ft_memcpy(d1, s1, len);
+		return (d1);
 	}
 	return (0);
 }
