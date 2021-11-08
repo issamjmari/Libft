@@ -15,15 +15,6 @@
 
 int main(void)
 {
-<<<<<<< HEAD
-	char		str2[] = "";
-	// char s[] = "Pokois";
-	// printf("%s\n", strrchr(str2, '\0'));
-	printf("%s\n", ft_strrchr(str2, '\0'));
-=======
-	 //char		str2[14] = "a";
-	// char s[] = "Pokois";
-	// printf("%s\n", strrchr(str2, '\0'));
-	printf("%s\n", ft_strtrim("\t\t\n \t", "\t \n"));
->>>>>>> d18dc34347fedd815dc75b407f8868d37c586cd5
+	char * str = strdup("1");
+	ft_substr(str, 42, 42000000);
 }

@@ -51,4 +51,9 @@ void	ft_putendl_fd(char *s, int fd);
 void 	ft_putnbr_fd(int n, int fd);
 char	*ft_itoa(int n);
 char	*ft_strjoin(char const *s1, char const *s2);
+typedef struct s_list
+{
+	void *content;
+	struct s_list *next;
+}	t_list;
 #endif
