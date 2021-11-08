@@ -21,6 +21,7 @@ OBJ = $(SRC:.c=.o)
 HEADER = libft.h
 CC = gcc -Wall -Wextra -Werror
 NAME = libft.a
+RM = rm -f
 
 all :	$(NAME)
 
@@ -28,9 +29,9 @@ $(NAME) :
 	$(CC) -c $(SRC)
 	ar rcs $(NAME) $(OBJ)
 clean :
-	rm -f $(OBJ)
+	$(RM) $(OBJ)
 fclean : clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 re : fclean all run
 .PHONY: all clean fclean re
 

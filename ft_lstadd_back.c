@@ -7,6 +7,7 @@ void ft_lstadd_back(t_list **lst, t_list *new)
 		if (!lst->next)
 		{
 			lst->next = new;
+			new->next = 0;
 			break;
 		}
 		lst = lst->next;

@@ -44,7 +44,7 @@ char    *ft_strtrim(char const *s1, char const *set)
     int        stock;
     int        last;
 
-    if (!set[0])
+    if (!set)
         return ((char *)s1);
     i = 0;
     len = ft_strlen(s1);
@@ -56,9 +56,8 @@ char    *ft_strtrim(char const *s1, char const *set)
       while (is_set(s1[--len], set))
         i++;
     last = last - i;
-    if (i == len)
-        last = 0;
     temp = (char *) malloc (last + 1);
+	i = 0;
     if (!temp)
         return (0);
     temp = ft_stock((char *)s1, stock, last, temp);
