@@ -26,9 +26,9 @@ static int	is_set(char c, char const *set)
 	return (0);
 }
 
-char *ft_stock(char *s1, int stock, int last, char *temp)
+char	*ft_stock(char *s1, int stock, int last, char *temp)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s1[stock] && i < last)
@@ -36,31 +36,31 @@ char *ft_stock(char *s1, int stock, int last, char *temp)
 	return (temp);
 }
 
-char    *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-    char    *temp;
-    int        i;
-    int        len;
-    int        stock;
-    int        last;
+	char	*temp;
+	int		i;
+	int		len;
+	int		stock;
+	int		last;
 
-    if (!set)
-        return ((char *)s1);
-    i = 0;
-    len = ft_strlen(s1);
-    last = len;
-    while (is_set(s1[i], set))
-        i++;
-    stock = i;
-    if (i != len)
-      while (is_set(s1[--len], set))
-        i++;
-    last = last - i;
-    temp = (char *) malloc (last + 1);
+	if (!set)
+		return ((char *)s1);
 	i = 0;
-    if (!temp)
-        return (0);
-    temp = ft_stock((char *)s1, stock, last, temp);
-    temp[last] = '\0';
-    return (temp);
+	len = ft_strlen(s1);
+	last = len;
+	while (is_set(s1[i], set))
+		i++;
+	stock = i;
+	if (i != len)
+		while (is_set(s1[--len], set))
+			i++;
+	last = last - i;
+	temp = (char *) malloc (last + 1);
+	i = 0;
+	if (!temp)
+		return (0);
+	temp = ft_stock((char *)s1, stock, last, temp);
+	temp[last] = '\0';
+	return (temp);
 }
