@@ -6,7 +6,7 @@
 /*   By: ijmari <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 13:57:51 by ijmari            #+#    #+#             */
-/*   Updated: 2021/11/09 14:00:09 by ijmari           ###   ########.fr       */
+/*   Updated: 2021/11/09 16:43:52 by ijmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,13 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	while (*lst)
+	t_list *temp;
+	if (*lst)
 	{
-		if (!(*lst)->next)
-		{
-			(*lst)->next = new;
-			new->next = 0;
-			return ;
-		}
-		(*lst) = (*lst)->next;
+		temp = ft_lstlast(*lst);
+		temp->next = new;
+		new->next = 0;
 	}
-	if (!(*lst))
+	else
 		*lst = new;
 }

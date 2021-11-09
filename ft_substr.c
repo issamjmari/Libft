@@ -6,7 +6,7 @@
 /*   By: ijmari <ijmari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 09:38:37 by ijmari            #+#    #+#             */
-/*   Updated: 2021/11/04 09:38:38 by ijmari           ###   ########.fr       */
+/*   Updated: 2021/11/09 19:46:18 by ijmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	if (start > ft_strlen(s))
 		len = 0;
 	else if (ft_strlen(s) < len)

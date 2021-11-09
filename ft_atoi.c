@@ -6,7 +6,7 @@
 /*   By: ijmari <ijmari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 09:06:17 by ijmari            #+#    #+#             */
-/*   Updated: 2021/11/04 09:06:18 by ijmari           ###   ########.fr       */
+/*   Updated: 2021/11/09 19:57:04 by ijmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_atoi(const char *str)
 {
 	int			i;
 	int			negative;
-	int			temp;
+	long		temp;
 
 	i = 0;
 	negative = 0;
@@ -40,6 +40,10 @@ int	ft_atoi(const char *str)
 	}
 	while ((str[i] >= '0' && str[i] <= '9'))
 	{
+		if (temp > 2147483647 && !negative)
+			return (-1);
+		else if (temp < -2147483648 && negative)
+			return (0);
 		temp = (str[i] - 48) + (temp * 10);
 		i++;
 	}

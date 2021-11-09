@@ -6,7 +6,7 @@
 /*   By: ijmari <ijmari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 09:03:40 by ijmari            #+#    #+#             */
-/*   Updated: 2021/11/04 09:03:41 by ijmari           ###   ########.fr       */
+/*   Updated: 2021/11/09 19:49:17 by ijmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		stock;
 	int		last;
 
+	if (!s1)
+		return (NULL);
 	if (!set)
 		return ((char *)s1);
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: ijmari <ijmari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 09:23:58 by ijmari            #+#    #+#             */
-/*   Updated: 2021/11/04 09:23:59 by ijmari           ###   ########.fr       */
+/*   Updated: 2021/11/09 20:05:16 by ijmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ char	**ft_split(char const *s, char c)
 	char	**stock;
 	int		j;
 
+	if (!s)
+		return (NULL);
 	word = ft_count_word(s, c);
 	stock = (char **) malloc ((word + 1) * sizeof(char *));
 	if (!stock)
@@ -82,8 +84,12 @@ char	**ft_split(char const *s, char c)
 			j++;
 		s += j;
 		stock[i] = ft_stock(s, c);
-		if (!stock[i])
+		if (!stock[i]) {
+			while (--i)
+				free(stock[i]);
+			free(stock);
 			return (NULL);
+		}
 		s += nextword(s, c);
 		i++;
 	}
