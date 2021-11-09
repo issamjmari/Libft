@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static void	ft_putchar(char	c, int fd)
+static void	ft_putchar(char c, int fd)
 {
 	write(fd, &c, 1);
 }
@@ -39,7 +39,7 @@ static void	handle_the_nb(int temp, int size, int last, int fd)
 	}
 }
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	int	size;
 	int	temp;

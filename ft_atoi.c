@@ -20,14 +20,7 @@ static int	is_space(char c)
 		return (1);
 	return (0);
 }
-int handle_maxmin(int temp)
-{
-	if (temp < -2147483648)
-		return (2147483647);
-	else if (temp > 2147483647)
-		return (-2147483648);
-	return (0);
-}
+
 int	ft_atoi(const char *str)
 {
 	int			i;
@@ -37,8 +30,6 @@ int	ft_atoi(const char *str)
 	i = 0;
 	negative = 0;
 	temp = 0;
-	if (temp < -2147483648 || temp > 2147483647)
-		temp = handle_maxmin(temp);
 	while (is_space(str[i]))
 		i++;
 	if (str[i] == '-' || str[i] == '+')
