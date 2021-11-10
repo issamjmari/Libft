@@ -6,7 +6,7 @@
 /*   By: ijmari <ijmari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 09:06:17 by ijmari            #+#    #+#             */
-/*   Updated: 2021/11/09 19:57:04 by ijmari           ###   ########.fr       */
+/*   Updated: 2021/11/10 11:37:52 by ijmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,11 @@ static int	is_space(char c)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+int	ft_form(char const *str, int i, int negative)
 {
-	int			i;
-	int			negative;
-	long		temp;
+	long	temp;
 
-	i = 0;
-	negative = 0;
 	temp = 0;
-	while (is_space(str[i]))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			negative++;
-		i++;
-	}
 	while ((str[i] >= '0' && str[i] <= '9'))
 	{
 		if (temp > 2147483647 && !negative)
@@ -50,4 +38,22 @@ int	ft_atoi(const char *str)
 	if (negative == 1)
 		temp *= -1;
 	return (temp);
+}
+
+int	ft_atoi(const char *str)
+{
+	int			i;
+	int			negative;
+
+	i = 0;
+	negative = 0;
+	while (is_space(str[i]))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			negative++;
+		i++;
+	}
+	return (ft_form(str, i, negative));
 }

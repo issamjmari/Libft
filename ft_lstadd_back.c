@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ijmari <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ijmari <ijmari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 13:57:51 by ijmari            #+#    #+#             */
-/*   Updated: 2021/11/09 16:43:52 by ijmari           ###   ########.fr       */
+/*   Updated: 2021/11/10 11:24:30 by ijmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *temp;
+	t_list	*temp;
+
 	if (*lst)
 	{
 		temp = ft_lstlast(*lst);

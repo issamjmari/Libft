@@ -6,7 +6,7 @@
 /*   By: ijmari <ijmari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 09:23:58 by ijmari            #+#    #+#             */
-/*   Updated: 2021/11/09 20:05:16 by ijmari           ###   ########.fr       */
+/*   Updated: 2021/11/10 11:13:03 by ijmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,19 +63,11 @@ static int	nextword(char const *s, char c)
 	return (i);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_handle(int word, char const *s, char **stock, int c)
 {
-	int		i;
-	int		word;
-	char	**stock;
-	int		j;
+	int	i;
+	int	j;
 
-	if (!s)
-		return (NULL);
-	word = ft_count_word(s, c);
-	stock = (char **) malloc ((word + 1) * sizeof(char *));
-	if (!stock)
-		return (NULL);
 	i = 0;
 	while (i < word)
 	{
@@ -84,7 +76,8 @@ char	**ft_split(char const *s, char c)
 			j++;
 		s += j;
 		stock[i] = ft_stock(s, c);
-		if (!stock[i]) {
+		if (!stock[i])
+		{
 			while (--i)
 				free(stock[i]);
 			free(stock);
@@ -95,4 +88,18 @@ char	**ft_split(char const *s, char c)
 	}
 	stock[i] = 0;
 	return (stock);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		word;
+	char	**stock;
+
+	if (!s)
+		return (NULL);
+	word = ft_count_word(s, c);
+	stock = (char **) malloc ((word + 1) * sizeof(char *));
+	if (!stock)
+		return (NULL);
+	return (ft_handle(word, s, stock, c));
 }
