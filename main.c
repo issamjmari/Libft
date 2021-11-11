@@ -1,22 +1,14 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ijmari <ijmari@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 15:55:37 by ijmari            #+#    #+#             */
-/*   Updated: 2021/11/10 11:34:08 by ijmari           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
-#include <unistd.h>
-#include <string.h>
 
-int main()
+int	main(void)
 {
-	printf("%d\n", ft_atoi("-9999999999999999"));
-	printf("%d", atoi("-9999999999999999"));
+	t_list *m;
+	t_list *n;
+
+	m = ft_lstnew("OK");
+	n = ft_lstnew("YES");
+	ft_lstadd_back(&m, n);
+	ft_lstmap();
+	return (0);
 }
