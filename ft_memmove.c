@@ -6,7 +6,7 @@
 /*   By: ijmari <ijmari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 10:18:19 by ijmari            #+#    #+#             */
-/*   Updated: 2021/11/06 13:18:57 by ijmari           ###   ########.fr       */
+/*   Updated: 2021/11/11 17:20:12 by ijmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		d1 = are_overlapping(d1, s1, len2);
 		return (d1);
 	}
-	if (lap != 1)
+	else
 	{
 		d1 = ft_memcpy(d1, s1, len);
 		return (d1);

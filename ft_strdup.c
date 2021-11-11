@@ -6,7 +6,7 @@
 /*   By: ijmari <ijmari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 09:35:35 by ijmari            #+#    #+#             */
-/*   Updated: 2021/11/05 15:57:57 by ijmari           ###   ########.fr       */
+/*   Updated: 2021/11/11 17:34:23 by ijmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strdup(const char *str)
 	j = 0;
 	while (str[i])
 		i++;
-	dup = malloc ((i * sizeof(char)) + 1);
+	dup = (char *) malloc ((i + 1) * sizeof(char));
 	if (dup == NULL)
 		return (NULL);
 	while (str[j])
