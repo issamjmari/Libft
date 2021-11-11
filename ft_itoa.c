@@ -6,7 +6,7 @@
 /*   By: ijmari <ijmari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 11:49:20 by ijmari            #+#    #+#             */
-/*   Updated: 2021/11/06 14:56:24 by ijmari           ###   ########.fr       */
+/*   Updated: 2021/11/11 16:01:13 by ijmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	ft_size(int n)
 	return (size);
 }
 
-static int	ft_len(int n, int sign)
+static int	ft_len(int n)
 {
 	int	len;
 
@@ -42,13 +42,11 @@ static int	ft_len(int n, int sign)
 	}
 	else
 		len = 0;
-	while ((unsigned int) n / 10 > 0)
+	while (n / 10 > 0)
 	{
 		len += 1;
 		n /= 10;
 	}
-	if (sign == 1)
-		return (len);
 	return (len + 1);
 }
 
@@ -62,7 +60,7 @@ static int	ft_sign(int n)
 
 static char	*ft_stock(int len, long long int n, int size, char *temp)
 {
-	while (len >= 0 && n)
+	while (len >= 0)
 	{
 		temp[len] = (n % 10) + '0';
 		n /= 10;
@@ -81,7 +79,7 @@ char	*ft_itoa(int n)
 	long long int			t;
 
 	sign = 0;
-	len = ft_len(n, sign);
+	len = ft_len(n);
 	size = ft_size(n);
 	sign = ft_sign(n);
 	temp = (char *) malloc (len + 1);

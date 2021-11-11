@@ -6,7 +6,7 @@
 /*   By: ijmari <ijmari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 09:06:17 by ijmari            #+#    #+#             */
-/*   Updated: 2021/11/10 11:37:52 by ijmari           ###   ########.fr       */
+/*   Updated: 2021/11/11 18:28:00 by ijmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ static int	is_space(char c)
 	return (0);
 }
 
-int	ft_form(char const *str, int i, int negative)
+static int	ft_form(char const *str, int i, int negative)
 {
-	long	temp;
+	long long	temp;
 
 	temp = 0;
 	while ((str[i] >= '0' && str[i] <= '9'))

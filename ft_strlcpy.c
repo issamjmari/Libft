@@ -6,11 +6,13 @@
 /*   By: ijmari <ijmari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 18:55:09 by ijmari            #+#    #+#             */
-/*   Updated: 2021/11/05 15:58:08 by ijmari           ###   ########.fr       */
+/*   Updated: 2021/11/11 20:03:15 by ijmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+#include "libft.h"
+
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	unsigned int	i;
 	int				j;
