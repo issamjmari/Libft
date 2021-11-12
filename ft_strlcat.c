@@ -20,8 +20,10 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	unsigned int	n;
 
 	j = 0;
-	i = ft_strlen(dest);
 	k = ft_strlen(src);
+	if (!dest && !size)
+		return (k);
+	i = ft_strlen(dest);
 	n = i;
 	if (i >= size || size == 0)
 		return (k + size);
