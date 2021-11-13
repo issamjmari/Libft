@@ -29,15 +29,15 @@ RM = rm -f
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	@ar rcs $(NAME) $(OBJ)
+	ar rcs $(NAME) $(OBJ)
 clean :
-	@$(RM) $(OBJ)
-	@$(RM) $(B_OBJ)
+	$(RM) $(OBJ)
+	$(RM) $(B_OBJ)
 fclean : clean
-	@$(RM) $(NAME)
+	$(RM) $(NAME)
 re : fclean all bonus run
 bonus : $(B_OBJ)
-	@ar rcs $(NAME) $(B_OBJ)
+	ar rcs $(NAME) $(B_OBJ)
 .PHONY : all clean fclean re
 run: all
 	gcc  main.c libft.a

@@ -18,8 +18,6 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 	int				j;
 
 	i = 0;
-	if (!str)
-		return (NULL);
 	if (to_find[i] == '\0')
 		return ((char *)str);
 	while (str[i] && i < len)
