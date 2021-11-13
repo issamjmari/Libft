@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ijmari <ijmari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/29 14:22:44 by ijmari            #+#    #+#             */
-/*   Updated: 2021/11/04 09:37:03 by ijmari           ###   ########.fr       */
+/*   Created: 2021/11/10 15:20:59 by ijmari            #+#    #+#             */
+/*   Updated: 2021/11/10 15:21:00 by ijmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *to_find, size_t len)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	unsigned int	i;
-	int				j;
+	t_list	*temp;
 
-	i = 0;
-	if (!str)
-		return (NULL);
-	if (to_find[i] == '\0')
-		return ((char *)str);
-	while (str[i] && i < len)
+	if (*lst && del)
 	{
-		j = 0;
-		while (str[i + j] == to_find[j] && (j + i < len))
+		temp = *lst;
+		while (temp->next)
 		{
-			if (to_find[j + 1] == '\0')
-				return ((char *) &str[i]);
-			j++;
+			temp = *lst;
+			ft_lstdelone(temp, del);
+			*lst = (*lst)->next;
 		}
-		i++;
 	}
-	return (0);
+	*lst = 0;
 }
